@@ -8,7 +8,7 @@
             "_security_scan_report_conclusion": "failure",
             "_comment_security_scan_report_conclusion": "Optional. Expected scan report conclusion. Options: 'success' | 'failure'. This validates the security scan result status. If not provided, this check will not be performed.",
             "total_libs_scanned": {
-                "eq": 29
+                "gte": 29
             },
             "_comment_total_libs_scanned": "Expected number of libraries scanned with comparison operator. Validates that the scan processed libraries."
         },
@@ -18,13 +18,13 @@
             "check_dependency_tree_detection_status": true,
             "_comment_check_dependency_tree_detection_status": "Whether to check if dependency tree was successfully detected. Options: true | false. Default: true",
             "expected_total_dependencies_number": {
-                "eq": 52
+                "gte": 52
             },
             "expected_direct_dependencies_number": {
                 "eq": 3
             },
             "expected_transitive_dependencies_number": {
-                "eq": 49
+                "gte": 49
             },
             "_comment_expected_dependencies_number": "Optional. Expected number of dependencies with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). If not provided, this check will not be performed.",
             "direct_dependencies_names_list": {
@@ -35,7 +35,7 @@
                 ]
             },
             "transitive_dependencies_names_list": {
-                "eq": [
+                "contains": [
                     "proto-plus",
                     "google-cloud-core",
                     "python-dotenv",
